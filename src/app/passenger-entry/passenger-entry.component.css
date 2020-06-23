@@ -1,0 +1,26 @@
+.trainCard {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: oblique;
+    color: #d772f1;
+}
+
+.fare {
+    font-size: 19px;
+    font-weight: 700;
+    color: #de8210;
+    top: -3px;
+}
+
+.deleteBtn {
+    border-radius: 50%;
+    border: 1px solid #e89393;
+    color: red;
+    background-color: white;
+    padding: 0px 5px 2px 6px;
+}
+
+.deleteBtn:hover {
+    background-color: red;
+    color: white;
+}

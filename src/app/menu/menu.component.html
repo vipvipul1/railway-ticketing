@@ -1,0 +1,30 @@
+<header *ngIf="simpleAuthenticationService.isUserLoggedIn()">
+  <nav class="navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+    <div><a href="https://www.google.com" class="navbar-brand">
+        Indian Railways</a></div>
+
+    <ul class="navbar-nav">
+      	<li class="nav-item px-1 active">
+		 	<a [routerLink]="['/homepage', simpleAuthenticationService.getAuthenticatedUser()]" class="nav-link">Home</a>
+		</li>
+		<li class="nav-item px-1">
+		 	<a routerLink="/book" class="nav-link">Book Tickets</a>
+		</li>
+      	<li class="nav-item px-1">
+		 	<a routerLink="/mytickets" class="nav-link">My Bookings</a>
+		</li>
+      	<li class="nav-item px-1">
+		 	<a routerLink="/pnr" class="nav-link">PNR Enquiry</a>
+		</li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      	<li class="nav-item">
+			<a routerLink="/profile" class="nav-link">Profile</a>
+		</li>
+      	<li class="nav-item">
+			<a routerLink="/logout" class="nav-link">Logout</a>
+		</li>
+    </ul>
+  </nav>
+</header>
