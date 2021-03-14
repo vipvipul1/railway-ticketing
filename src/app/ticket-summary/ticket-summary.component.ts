@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../app-service/providers/data.service';
+import { DataService } from '../app-service/helper/data.service';
 import { Train } from '../app-model/train.model';
 
 @Component({
@@ -10,10 +10,10 @@ import { Train } from '../app-model/train.model';
 export class TicketSummaryComponent implements OnInit {
 
   trainObj: Train;
-  bookingClass: { id: number, className: string };
+  bookingClass: { id: number, className: String };
   journeyDate: Date;
 
-  pname: string[];
+  pname: String[];
   age: number[];
   gender: any[];
   preference: any[];
