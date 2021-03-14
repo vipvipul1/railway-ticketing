@@ -8,7 +8,7 @@ export class SimpleAuthenticationService {
   constructor() { }
 
   checkAuthCredentials(username, password) {
-    if (username == 'vipul' && password == 'pass') {
+    if (username == 'vipul' && password == 'vipul') {
       sessionStorage.setItem('username', username);
       return true;
     }

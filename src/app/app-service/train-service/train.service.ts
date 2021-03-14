@@ -43,7 +43,8 @@ export class TrainService {
 
     foodList = [
         { id: 0, name: 'Veg' },
-        { id: 1, name: 'Non-veg' }
+        { id: 1, name: 'Non-veg' },
+        { id: 1, name: 'Anything' }
     ];
 
     trains = [

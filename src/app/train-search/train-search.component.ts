@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Train } from '../app-model/train.model';
 import { TrainService } from '../app-service/train-service/train.service';
 import { Router } from '@angular/router';
-import { DataService } from '../app-service/providers/data.service';
+import { DataService } from '../app-service/helper/data.service';
 
 @Component({
   selector: 'app-train-search',

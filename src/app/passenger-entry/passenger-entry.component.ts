@@ -1,5 +1,5 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
-import { DataService } from '../app-service/providers/data.service';
+import { DataService } from '../app-service/helper/data.service';
 import { Train } from '../app-model/train.model';
 import { TrainService } from '../app-service/train-service/train.service';
 import { Router } from '@angular/router';
@@ -25,14 +25,14 @@ export class FarePipe implements PipeTransform {
 export class PassengerEntryComponent implements OnInit {
 
   trainObj: Train;
-  bookingClass: { id: number, className: string };
+  bookingClass: { id: number, className: String };
   journeyDate: Date;
 
   preferenceList = [];
   genderList = [];
   foodList = [];
 
-  pname: string[] = [''];
+  pname: String[] = [''];
   age: number[] = [undefined];
   gender: any[] = ['-- gender --'];
   preference: any[] = ['-- preference --'];
