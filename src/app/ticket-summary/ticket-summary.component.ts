@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../app-service/helper/data.service';
+// import { DataService } from '../app-service/helper/data.service';
 import { Train } from '../app-model/train.model';
 
 @Component({
@@ -20,15 +20,15 @@ export class TicketSummaryComponent implements OnInit {
   food: any[];
 
   constructor(
-    private dataService: DataService
+    // private dataService: DataService
   ) { }
 
   ngOnInit(): void {
-    this.pname = this.dataService.getStorage().pname;
-    this.age = this.dataService.getStorage().age;
-    this.gender = this.dataService.getStorage().gender;
-    this.preference = this.dataService.getStorage().preference;
-    this.food = this.dataService.getStorage().food;
+    // this.pname = this.dataService.getStorage().pname;
+    // this.age = this.dataService.getStorage().age;
+    // this.gender = this.dataService.getStorage().gender;
+    // this.preference = this.dataService.getStorage().preference;
+    // this.food = this.dataService.getStorage().food;
 
     // console.log(this.pname);
     // console.log(this.age);

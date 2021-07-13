@@ -1,8 +1,8 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
-import { DataService } from '../app-service/helper/data.service';
 import { Train } from '../app-model/train.model';
 import { TrainService } from '../app-service/train-service/train.service';
 import { Router } from '@angular/router';
+import { TrainSummaryService } from '../app-service/train-service/train-summary.service';
 
 
 @Pipe({
@@ -41,15 +41,15 @@ export class PassengerEntryComponent implements OnInit {
   passengers = [1];
 
   constructor(
-    private dataService: DataService,
     private trainService: TrainService,
-    private router: Router
+    private router: Router,
+    private trainSummaryService: TrainSummaryService
   ) { }
 
   ngOnInit(): void {
-    this.trainObj = this.dataService.getStorage().train;
-    this.bookingClass = this.dataService.getStorage().bookingClass;
-    this.journeyDate = this.dataService.getStorage().journeyDate;
+    this.trainObj = this.trainSummaryService.getSummary().train;
+    this.bookingClass = this.trainSummaryService.getSummary().bookingClass;
+    this.journeyDate = this.trainSummaryService.getSummary().journeyDate;
 
     this.preferenceList = this.trainService.preferenceList;
     this.genderList = this.trainService.genderList;
@@ -80,7 +80,7 @@ export class PassengerEntryComponent implements OnInit {
   }
 
   submitPassengerDetails() {
-    this.dataService.setStorage({ pname: this.pname, age: this.age, gender: this.gender, preference: this.preference, food: this.food });
+    // this.dataService.setStorage({ pname: this.pname, age: this.age, gender: this.gender, preference: this.preference, food: this.food });
     this.router.navigate(['ticketsummary']);
   }
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Train } from '../app-model/train.model';
 import { TrainService } from '../app-service/train-service/train.service';
 import { Router } from '@angular/router';
-import { DataService } from '../app-service/helper/data.service';
+import { TrainSummaryService } from '../app-service/train-service/train-summary.service';
 
 @Component({
   selector: 'app-train-search',
@@ -31,7 +31,7 @@ export class TrainSearchComponent implements OnInit {
   constructor(
     private trainService: TrainService,
     private router: Router,
-    private dataService: DataService
+    private trainSummaryService: TrainSummaryService
   ) { }
 
   ngOnInit(): void {
@@ -96,7 +96,7 @@ export class TrainSearchComponent implements OnInit {
   bookTicket(index: number) {
     const train = this.availableTrains[index];
     const bookingClass = this.availableTrains[index].trainClass[this.newTrainClass[index]];
-    this.dataService.setStorage({ train, bookingClass, journeyDate: this.journeyDate });
+    this.trainSummaryService.setSummary({ train, bookingClass, journeyDate: this.journeyDate });
 
     this.router.navigate(['passengerform']);
   }
