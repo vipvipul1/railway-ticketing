@@ -10,10 +10,10 @@ import { Train } from '../app-model/train.model';
 export class TicketSummaryComponent implements OnInit {
 
   trainObj: Train;
-  bookingClass: { id: number, className: String };
+  bookingClass: { id: number, className: string };
   journeyDate: Date;
 
-  pname: String[];
+  pname: string[];
   age: number[];
   gender: any[];
   preference: any[];

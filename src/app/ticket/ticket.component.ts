@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class Ticket {
   constructor(
-    public source: String,
-    public destination: String,
-    public trainClass: String,
+    public source: string,
+    public destination: string,
+    public trainClass: string,
     public journeyDate: Date
   ) { }
 }
