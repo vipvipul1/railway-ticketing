@@ -25,14 +25,14 @@ export class FarePipe implements PipeTransform {
 export class PassengerEntryComponent implements OnInit {
 
   trainObj: Train;
-  bookingClass: { id: number, className: String };
+  bookingClass: { id: number, className: string };
   journeyDate: Date;
 
   preferenceList = [];
   genderList = [];
   foodList = [];
 
-  pname: String[] = [''];
+  pname: string[] = [''];
   age: number[] = [undefined];
   gender: any[] = ['-- gender --'];
   preference: any[] = ['-- preference --'];
