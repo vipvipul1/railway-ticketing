@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SimpleAuthenticationService {
+export class SimpleAuthService {
 
   constructor() { }
 
   checkAuthCredentials(username, password) {
-    if (username == 'vipul' && password == 'vipul') {
+    if (username == 'vipvipul1' && password == 'vipvipul1') {
       sessionStorage.setItem('username', username);
       return true;
     }
