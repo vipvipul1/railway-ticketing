@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SimpleAuthenticationService } from '../app-service/authentication/simple-authentication.service';
+import { SimpleAuthService } from '../app-service/authentication/simple-auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
 
   constructor(
-    private simpleAuthenticationService: SimpleAuthenticationService,
+    private simpleAuthService: SimpleAuthService,
     private router: Router
   ) { }
 
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    const status = this.simpleAuthenticationService.checkAuthCredentials(this.username, this.password);
+    const status = this.simpleAuthService.checkAuthCredentials(this.username, this.password);
     if (status == true) {
       this.invalidLogin = false;
       this.errorMessage = '';

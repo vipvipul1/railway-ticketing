@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { SimpleAuthenticationService } from '../authentication/simple-authentication.service';
+import { SimpleAuthService } from '../authentication/simple-auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,14 @@ import { SimpleAuthenticationService } from '../authentication/simple-authentica
 export class LoginRouteGuardService implements CanActivate {
 
   constructor(
-    private simpleAuthenticationService: SimpleAuthenticationService,
+    private simpleAuthService: SimpleAuthService,
     private router: Router
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const loginStatus = this.simpleAuthenticationService.isUserLoggedIn();
+    const loginStatus = this.simpleAuthService.isUserLoggedIn();
     if (loginStatus == true) {
-      this.router.navigate(['homepage', this.simpleAuthenticationService.getAuthenticatedUser()]);
+      this.router.navigate(['homepage', this.simpleAuthService.getAuthenticatedUser()]);
       return false;
     }
     return true;
